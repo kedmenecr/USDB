@@ -6,6 +6,6 @@ only:
 - "/^feature.*$/"
 before_install:
 - openssl aes-256-cbc -K $encrypted_819282be80f9_key -iv $encrypted_819282be80f9_iv
-  -in id_rsa.enc -out ~\/.ssh/id_rsa -d
+  -in id_rsa.enc -d 
 after_success:
 - bash .travis/deploy.sh
