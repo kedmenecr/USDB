@@ -7,7 +7,7 @@ git remote add deploy ssh://git@$IP:$PORT$DEPLOY_DIR
 git push deploy master
 
 # Skip this command if you don't need to execute any additional commands after deploying.
-ssh root@$IP -p $PORT <<EOF
+ssh -o "StrictHostKeyChecking no" root@$IP -p $PORT <<EOF
   echo "tst je presel" >> /root/test.txt
     crystal build --release --no-debug index.cr # Change to whatever commands you need!
     EOF
