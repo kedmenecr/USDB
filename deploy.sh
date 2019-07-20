@@ -9,7 +9,7 @@ git push deploy master
 # Skip this command if you don't need to execute any additional commands after deploying.
 ssh  root@$IP -p $PORT <<EOF
     cd /root/BlogInfra/USDB
-    git checkout origin/feature/mm190627-JWTS-2
+    git checkout origin/feature/mk-190618-USDB-2
     docker build -t "usdb" .
 	  docker run -d --network "blog-infra" --name "usdb" -p 9090:9090 usdb
 	  docker logs usdb >> /var/log/containers.log  
