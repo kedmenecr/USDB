@@ -6,9 +6,10 @@ only:
   - /feature\/.*/
 except:
         - master
+addons:
+  ssh_known_hosts: 116.202.28.78
 before_install: 
         - openssl aes-256-cbc -K $encrypted_1505e8a72b1d_key -iv $encrypted_1505e8a72b1d_iv -in id_rsa.enc -out id_rsa -d
 after_success:
         - bash deploy.sh
-addons:
-  ssh_known_hosts: 116.202.28.78
+
